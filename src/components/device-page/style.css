@@ -1,8 +1,15 @@
 .dashed-link {
     border-bottom: 1px dashed #007bff;
 }
+
 .dashed-link:hover {
     text-decoration: none;
+}
+
+.disabled-link {
+    pointer-events: none;
+    text-decoration: none;
+    opacity: 0.5;
 }
 
 /*
@@ -54,4 +61,3 @@
     /*margin-left: auto;*/
     /*margin-right: auto;*/
 }
-
