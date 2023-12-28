@@ -64,7 +64,7 @@ export class DeviceControlGroup extends Component<DeviceControlGroupProps & Acti
                     <Button<void> className="btn btn-secondary" title="Set converter Id manually" onClick={this.onIdentManualClick}><i className="fas fa-tools" /></Button>
                     <Button<void> className="btn btn-success" onClick={this.onBindClick}>Bind</Button>
                 </Fragment> : null}
-                <button type="button" title="Remove device" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className={cx("fa", "fa-trash")} /></button>
+                <button type="button" title="Remove device" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className={cx("fa", "fa-trash")} /></button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     {validDevice ? <a class="dropdown-item" href="#" onClick={(): Promise<void> => this.onRemoveClick(false)}>Send leave req</a> : null}
                     <a class="dropdown-item" href="#" onClick={(): Promise<void> => this.onRemoveClick(true)}>Remove</a>

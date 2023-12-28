@@ -141,7 +141,7 @@ export class Discovery extends Component<GlobalState & Actions, DiscoveryState> 
 
         return (<div class="d-flex h-100 justify-content-center align-items-center">
             {joinDuration <= 0 ? (
-                <div class="btn-group">
+                <div class="btn-group me-3">
                     <Button<string> className="btn btn-success" onClick={this.enableJoin} item={'0x0000'}>Enable
                      join</Button>
                     <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -155,7 +155,7 @@ export class Discovery extends Component<GlobalState & Actions, DiscoveryState> 
                     </div>
                 </div>
 
-            ) : (<div>Join enabled for {joinDuration} seconds, <a href="#" onClick={this.disableJoin}>Stop</a></div>)
+            ) : (<div className="me-3">Join enabled for {joinDuration} seconds, <a href="#" onClick={this.disableJoin}>Stop</a></div>)
             }
             {this.renderTlStartButton()}
         </div>
@@ -189,7 +189,7 @@ export class Discovery extends Component<GlobalState & Actions, DiscoveryState> 
     renderTlStartButton(): ComponentChild {
         const { touchlinkScanInProgress } = this.props;
         return (
-        <span class="ml-5">{touchlinkScanInProgress ? 'Scanning...' : <a href="#" onClick={this.scanTL}>Scan TouchLink</a>}</span>
+        <span class="ms-5">{touchlinkScanInProgress ? 'Scanning...' : <a href="#" onClick={this.scanTL}>Scan TouchLink</a>}</span>
         );
     }
 
