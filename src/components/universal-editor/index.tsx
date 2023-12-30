@@ -97,9 +97,9 @@ const UniversalEditor: FunctionalComponent<UniversalEditorProps> = forwardRef((p
             break;
         case "switch":
             input =
-                <div class={`custom-control custom-switch ${styles['custom-switch']} ml-2`}>
-                    <input ref={ref} {...rest} disabled={isLoading} type="checkbox" class={`custom-control-input ${styles['custom-control-input']}`} id={`${name}switch`} checked={value !== 'OFF'} onChange={changeHandler} />
-                    <label class={`custom-control-label ${styles['custom-control-label']}`} for={`${name}switch`}>{value as string}</label>
+                <div class={`form-check form-switch ${styles['custom-switch']} ms-2`}>
+                    <input ref={ref} {...rest} disabled={isLoading} type="checkbox" class={`form-check-input ${styles['custom-control-input']}`} id={`${name}switch`} checked={value !== 'OFF'} onChange={changeHandler} />
+                    <label class={`form-check-label ${styles['custom-control-label']}`} for={`${name}switch`}>{value as string}</label>
                 </div>;
             break;
         //case "number":

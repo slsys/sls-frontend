@@ -93,7 +93,7 @@ export class LogViewer extends Component<GlobalState & Actions, LogViewerState> 
                 <div class="col-sm-6 my-1">
                     <div class="d-flex justify-content-end">
                         <div class="col-sm-4">
-                            <select value={logLevel} class="custom-select" onChange={this.onLogLevelChange}>
+                            <select value={logLevel} class="form-select" onChange={this.onLogLevelChange}>
                                 <option value={LogLevel.LOG_OFF} selected>LOG_OFF</option>
                                 <option value={LogLevel.LOG_NORMAL} selected>LOG_NORMAL</option>
                                 <option value={LogLevel.LOG_VERBOSE}>LOG_VERBOSE</option>
