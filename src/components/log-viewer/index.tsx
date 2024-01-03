@@ -7,6 +7,7 @@ import actions, { Actions } from "../../actions";
 import { connect } from "unistore/preact";
 import { useEffect } from "preact/hooks";
 import { manager } from "../../websocket";
+import { LogMessage } from "../discovery/types";
 
 export const enum LogLevel {
     LOG_OFF,
@@ -35,9 +36,9 @@ export class LogViewer extends Component<GlobalState & Actions, LogViewerState> 
         setTimeout(this.scrollToBottom, 500);
         await getCurrentLogLevel();
 
-        manager.subscribe("log", (data) => {
+        manager.subscribe("log", (data:LogMessage) => {
             const { logs } = store.getState();
-            const copyLogs = [...logs, data.payload as string];
+            const copyLogs = [...logs, (data.payload.ts + ' ' + data.payload.message) as string];
             store.setState({ logs: copyLogs });
         });
     }

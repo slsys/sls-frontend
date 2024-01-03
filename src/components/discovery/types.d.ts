@@ -15,8 +15,14 @@ export type JoinEvents =
 export type ZigbeeEvent = "stateChange" | "LeaveInd" | "PermitJoin" | JoinEvents;
 
 export interface LogMessage {
-    category: "log";
-    payload: string;
+    category: "log"
+    payload: LogPayload
+}
+
+export interface LogPayload {
+  ts: number
+  log_level: number
+  message: string
 }
 
 export interface ZigbeePayload {
@@ -41,7 +47,7 @@ export interface ZigbeePayload {
 
 export interface WebsocketMessage {
     category: MessageCategory;
-    payload: string | ZigbeePayload;
+    payload: LogPayload | ZigbeePayload;
 }
 
 export interface TimeInfo {
