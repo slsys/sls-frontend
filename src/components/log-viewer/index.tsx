@@ -8,6 +8,8 @@ import { connect } from "unistore/preact";
 import { useEffect } from "preact/hooks";
 import { manager } from "../../websocket";
 import { LogMessage } from "../discovery/types";
+import { tsToTime } from "../../utils/tsConvert";
+import { msToString } from "../../utils/msToString";
 
 export const enum LogLevel {
     LOG_OFF,
@@ -38,7 +40,7 @@ export class LogViewer extends Component<GlobalState & Actions, LogViewerState> 
 
         manager.subscribe("log", (data:LogMessage) => {
             const { logs } = store.getState();
-            const copyLogs = [...logs, (data.payload.ts + ' ' + data.payload.message) as string];
+            const copyLogs = [...logs, (tsToTime(data.payload.ts) + msToString(data.payload.ms) + ' ' + data.payload.message) as string];
             store.setState({ logs: copyLogs });
         });
     }

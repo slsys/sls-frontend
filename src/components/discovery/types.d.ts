@@ -21,6 +21,7 @@ export interface LogMessage {
 
 export interface LogPayload {
   ts: number
+  ms: number
   log_level: number
   message: string
 }
