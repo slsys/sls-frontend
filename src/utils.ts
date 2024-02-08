@@ -31,7 +31,7 @@ export const sanitizeModelNameForImageUrl = (modelName: string): string => {
 };
 
 export const genDeviceImageUrl = (device: Device): string => ((device.cid > 0) ? `https://slsys.io/img/supported_devices/${device.cid}.png`
-                                                                               : `https://slsys.github.io/Gateway/devices/png/${sanitizeModelNameForImageUrl(device.ModelId)}.png`);
+                                                                               : `https://slsys.io/img/supported_devices/old_devices/${sanitizeModelNameForImageUrl(device.ModelId)}.png`);
 
 export type LoadableFileTypes = "js" | "css";
 
