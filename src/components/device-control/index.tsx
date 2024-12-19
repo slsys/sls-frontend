@@ -25,7 +25,7 @@ export class DeviceControlGroup extends Component<DeviceControlGroupProps & Acti
     onIdentManualClick = async (): Promise<void> => {
         const { identDevice, getZigbeeDevicesList, getDeviceInfo, device } = this.props;
         const newCid = prompt("Enter new cid", "" + device.cid);
-        if (newCid !== null && newCid !== "" + device.cid && parseInt(newCid) !== NaN) {
+        if (newCid !== null && newCid !== "" + device.cid && !Number.isNaN(parseInt(newCid))) {
             await identDevice(device.nwkAddr, newCid);
             await getZigbeeDevicesList(true);
             await getDeviceInfo(device.nwkAddr);

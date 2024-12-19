@@ -117,7 +117,7 @@ export class DeviceInfo extends Component<PropsFromStore & Actions, {}> {
                                 valueFormatter={(value: unknown, isLoading: boolean): ComponentChild =>
                                     device.supported === DeviceSupportStatus.UnSupported
                                         ? <Fragment>
-                                            <span class="text-muted">&lt;not set&gt;</span>&nbsp;(<a className={`${isLoading ? style["disabled-link"] : ""}`} href={`https://slsys.github.io/Gateway/zigbee_converters_rus.html`}
+                                            <span class="text-muted">&lt;not set&gt;</span>&nbsp;(<a className={`${isLoading ? style["disabled-link"] : ""}`} href={`https://slsys.io/docs/zigbee_converters`}
                                             target="_blank" rel="noopener noreferrer">HOWTO&nbsp;<i className={"fas fa-info-circle"} /></a>)
                                           </Fragment>
                                         : (value as number) > 0

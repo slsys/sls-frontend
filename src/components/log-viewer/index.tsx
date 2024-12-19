@@ -40,7 +40,7 @@ export class LogViewer extends Component<GlobalState & Actions, LogViewerState> 
 
         manager.subscribe("log", (data:LogMessage) => {
             const { logs } = store.getState();
-            const copyLogs = [...logs, (tsToTime(data.payload.ts) + msToString(data.payload.ms) + ' ' + data.payload.message) as string];
+            const copyLogs = [...logs, ('[' + tsToTime(data.payload.ts) + msToString(data.payload.ms/100) + '] ' + data.payload.message) as string];
             store.setState({ logs: copyLogs });
         });
     }

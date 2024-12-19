@@ -41,7 +41,7 @@ const UniversalEditor: FunctionalComponent<UniversalEditorProps> = forwardRef((p
             ? 'number'
             : typeof value === 'boolean'
                 ? 'checkbox'
-                : (name.startsWith('state') && typeof value === 'string' && /^ON|OFF$/i.test(value))
+                : (name.startsWith('state') && typeof value === 'string' && /^ON|OFF$/i.test(value) && !allowEmpty)
                     ? 'switch'
                     : 'default';
 
